@@ -1,0 +1,211 @@
+/* QA Lab producción: estados de autenticación y conexión. */
+
+.production-app .login-card [aria-busy="true"],
+.production-app .button.is-loading {
+  cursor: wait;
+}
+
+.production-app .button.is-loading::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgb(255 255 255 / 42%);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: app-spin 700ms linear infinite;
+}
+
+@keyframes app-spin {
+  to { transform: rotate(360deg); }
+}
+
+.production-app .code-step {
+  animation: auth-step-enter 180ms var(--ease-out) both;
+}
+
+@keyframes auth-step-enter {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.production-app .account-chip {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 11px;
+  background: var(--surface-soft);
+}
+
+.production-app .account-chip > .icon {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+  color: var(--blue-700);
+}
+
+.production-app .account-chip small,
+.production-app .account-chip strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.production-app .account-chip small {
+  color: var(--ink-500);
+  font-size: .68rem;
+}
+
+.production-app .account-chip strong {
+  color: var(--ink-900);
+  font-size: .8rem;
+}
+
+.production-app .text-button {
+  min-height: 40px;
+  border-radius: 9px;
+  padding: 7px 9px;
+  background: transparent;
+  color: var(--blue-700);
+  cursor: pointer;
+  font-size: .76rem;
+  font-weight: 750;
+}
+
+.production-app .text-button:hover {
+  background: #e9f3fb;
+}
+
+.production-app .text-button--center {
+  display: block;
+  margin: 8px auto 0;
+}
+
+.production-app .field-help {
+  margin: -9px 0 17px;
+  color: var(--ink-500);
+  font-size: .74rem;
+}
+
+.production-app .connection-note {
+  min-height: 20px;
+  margin: 15px 0 0;
+  color: var(--ink-500);
+  font-size: .74rem;
+  text-align: center;
+}
+
+.production-app .connection-note.is-error {
+  color: var(--red-700);
+}
+
+.production-app #loginCode {
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-align: center;
+}
+
+.production-app .sync-state {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  border-radius: 50%;
+  background: #edf7f3;
+}
+
+.production-app .sync-state > span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green-700);
+  box-shadow: 0 0 0 4px rgb(8 119 90 / 11%);
+}
+
+.production-app .sync-state.is-busy > span {
+  background: var(--amber-600);
+  animation: sync-pulse 900ms ease-in-out infinite;
+}
+
+.production-app .sync-state.is-offline > span {
+  background: var(--red-700);
+  box-shadow: 0 0 0 4px rgb(167 52 52 / 10%);
+}
+
+@keyframes sync-pulse {
+  50% { opacity: .38; transform: scale(.82); }
+}
+
+.production-app .nav-item[hidden],
+.production-app #staffNavigation[hidden] {
+  display: none !important;
+}
+
+.production-app .loading-block {
+  display: grid;
+  min-height: 160px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink-500);
+  font-size: .84rem;
+}
+
+.production-app .loading-block::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  margin-top: -42px;
+  border: 2px solid #dbe6ef;
+  border-top-color: var(--blue-600);
+  border-radius: 50%;
+  animation: app-spin 700ms linear infinite;
+}
+
+.production-app .empty-state .button {
+  margin-top: 14px;
+}
+
+.production-app .sidebar-note .icon {
+  color: var(--cyan-400);
+}
+
+@media (max-width: 680px) {
+  .production-app .logout-button {
+    display: inline-grid;
+  }
+
+  .production-app .sync-state {
+    display: none;
+  }
+
+  .production-app .account-chip {
+    grid-template-columns: 30px minmax(0, 1fr);
+  }
+
+  .production-app .account-chip .text-button {
+    grid-column: 2;
+    width: max-content;
+    min-height: 34px;
+    margin: -5px 0 0 -9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .production-app *,
+  .production-app *::before,
+  .production-app *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
