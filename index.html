@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10263f">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data:; frame-src https://script.google.com https://script.googleusercontent.com https://*.googleusercontent.com; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com; upgrade-insecure-requests">
+  <meta name="description" content="QA Lab, herramienta interna de capacitación y evaluación de calidad.">
+  <title>QA Lab | Marco de calidad</title>
+  <link rel="stylesheet" href="qa-lab.css">
+  <link rel="stylesheet" href="qa-lab-app.css">
+</head>
+<body class="production-app">
+  <a class="skip-link" href="#mainContent">Saltar al contenido</a>
+
+  <section class="login" id="loginScreen" aria-labelledby="loginTitle">
+    <div class="login__visual" aria-hidden="true">
+      <div class="signal signal--one"></div>
+      <div class="signal signal--two"></div>
+      <div class="login__message">
+        <span class="brand-mark brand-mark--large">QL</span>
+        <p>Una conversación clara.<br>Un siguiente paso posible.</p>
+      </div>
+    </div>
+
+    <div class="login__panel">
+      <form class="login-card" id="loginForm" novalidate>
+        <div class="login-card__brand">
+          <span class="brand-mark">QL</span>
+          <span>QA Lab</span>
+        </div>
+        <p class="kicker">Acceso interno</p>
+        <h1 id="loginTitle">Continúa tu práctica</h1>
+        <p class="login-card__intro" id="loginIntro">Ingresa tu correo para recibir un código temporal.</p>
+
+        <div id="emailStep">
+          <label class="field" for="loginEmail">
+            <span>Correo</span>
+            <input id="loginEmail" name="email" type="email" inputmode="email" autocomplete="username" placeholder="nombre@empresa.com" maxlength="160" aria-describedby="loginError" required>
+          </label>
+        </div>
+
+        <div class="code-step" id="codeStep" hidden>
+          <div class="account-chip">
+            <span data-icon="mail" aria-hidden="true"></span>
+            <span><small>Código enviado a</small><strong id="loginEmailSummary"></strong></span>
+            <button class="text-button" id="changeEmailButton" type="button">Cambiar</button>
+          </div>
+          <label class="field" for="loginCode">
+            <span>Código de acceso</span>
+            <input id="loginCode" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]*" maxlength="8" aria-describedby="loginError codeHelp">
+          </label>
+          <p class="field-help" id="codeHelp">El código vence en 10 minutos y solo puede utilizarse una vez.</p>
+        </div>
+
+        <p class="form-error" id="loginError" role="alert" hidden>No fue posible completar el acceso. Verifica la información o solicita ayuda.</p>
+        <button class="button button--primary button--full" id="loginSubmit" type="submit">Enviar código</button>
+        <button class="text-button text-button--center" id="resendCodeButton" type="button" hidden>Enviar otro código</button>
+        <p class="connection-note" id="connectionNote" role="status" aria-live="polite">Conectando de forma segura…</p>
+      </form>
+    </div>
+  </section>
+
+  <div class="app" id="appShell" hidden>
+    <div class="drawer-scrim" id="drawerScrim" hidden></div>
+
+    <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" data-route="home" aria-label="QA Lab, ir al inicio">
+        <span class="brand-mark">QL</span>
+        <span><strong>QA Lab</strong><small>Marco de calidad</small></span>
+      </a>
+
+      <nav class="primary-nav">
+        <p class="nav-heading">Explora</p>
+        <a class="nav-item is-active" href="#inicio" data-route="home">
+          <span data-icon="home" aria-hidden="true"></span><span>Inicio</span>
+        </a>
+        <a class="nav-item" href="#comportamientos" data-scroll="behaviors">
+          <span data-icon="grid" aria-hidden="true"></span><span>Comportamientos</span>
+        </a>
+        <a class="nav-item" href="#practica" data-scroll="dailyPractice">
+          <span data-icon="practice" aria-hidden="true"></span><span>Práctica del día</span>
+        </a>
+
+        <div id="staffNavigation" hidden>
+          <p class="nav-heading">Gestión</p>
+          <a class="nav-item" href="#supervisor" data-route="supervisor" id="supervisorNav" hidden>
+            <span data-icon="dashboard" aria-hidden="true"></span><span>Panel supervisor</span>
+          </a>
+          <a class="nav-item" href="#" id="adminNav" target="_blank" rel="noopener" hidden>
+            <span data-icon="users" aria-hidden="true"></span><span>Administrar accesos</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-note">
+        <span data-icon="shield" aria-hidden="true"></span>
+        <p>Sesión protegida y permisos verificados en cada operación.</p>
+      </div>
+    </aside>
+
+    <main class="main" id="mainContent" tabindex="-1">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú">
+          <span data-icon="menu" aria-hidden="true"></span>
+        </button>
+
+        <div class="breadcrumb" aria-label="Ruta actual">
+          <span>QA Lab</span><span aria-hidden="true">/</span><strong id="crumbCurrent">Inicio</strong>
+        </div>
+
+        <div class="topbar__actions">
+          <label class="search" for="searchInput">
+            <span data-icon="search" aria-hidden="true"></span>
+            <input id="searchInput" type="search" placeholder="Buscar comportamiento" autocomplete="off">
+          </label>
+          <span class="sync-state" id="syncState" title="Datos conectados" aria-label="Datos conectados"><span></span></span>
+          <div class="user-summary">
+            <span class="avatar" id="userAvatar" aria-hidden="true">--</span>
+            <span class="user-summary__copy"><strong id="currentUser">Usuario</strong><small id="currentRole">Rol</small></span>
+          </div>
+          <button class="icon-button logout-button" id="logoutButton" type="button" aria-label="Cerrar sesión" title="Cerrar sesión">
+            <span data-icon="logout" aria-hidden="true"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="view view--home" id="homeView" aria-labelledby="homeTitle">
+          <div class="hero">
+            <div class="hero__copy">
+              <p class="kicker kicker--light">Marco de calidad</p>
+              <h1 id="homeTitle">Conversaciones que sí hacen avanzar.</h1>
+              <p>Consulta una guía, revisa ejemplos y practica en pocos minutos.</p>
+              <a class="button button--light" href="#comportamientos" data-scroll="behaviors">Explorar comportamientos</a>
+            </div>
+            <div class="hero__signal" aria-hidden="true">
+              <div class="hero__score"><strong>9</strong><span>hábitos clave</span></div>
+              <svg viewBox="0 0 260 180" role="presentation">
+                <path d="M10 132 C54 132 56 82 97 82 S142 118 174 70 S220 38 250 38"/>
+                <circle cx="10" cy="132" r="5"/><circle cx="97" cy="82" r="5"/><circle cx="174" cy="70" r="5"/><circle cx="250" cy="38" r="5"/>
+              </svg>
+            </div>
+          </div>
+
+          <section class="section" id="behaviors" aria-labelledby="behaviorsTitle">
+            <div class="section-heading">
+              <div>
+                <p class="kicker">Biblioteca</p>
+                <h2 id="behaviorsTitle">Comportamientos</h2>
+                <p>Elige una habilidad para consultar su guía.</p>
+              </div>
+              <label class="select-field" for="topicFilter">
+                <span class="sr-only">Filtrar comportamientos</span>
+                <select id="topicFilter">
+                  <option value="all">Todos</option>
+                  <option value="conversion">Conversión</option>
+                  <option value="experience">Experiencia</option>
+                </select>
+                <span data-icon="chevron" aria-hidden="true"></span>
+              </label>
+            </div>
+            <div class="topic-grid" id="topicGrid"></div>
+          </section>
+
+          <section class="section section--daily" id="dailyPractice" aria-labelledby="dailyTitle">
+            <div class="section-heading">
+              <div>
+                <p class="kicker">Práctica del día</p>
+                <h2 id="dailyTitle">Mejores resultados</h2>
+                <p>El ranking se actualiza con cada evaluación.</p>
+              </div>
+              <a class="text-link" href="#comportamientos" data-scroll="behaviors">Elegir práctica <span data-icon="arrow" aria-hidden="true"></span></a>
+            </div>
+            <div class="leaderboard" id="dailyBoard" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <section class="view view--detail" id="detailView" hidden></section>
+
+        <section class="view view--supervisor" id="supervisorView" aria-labelledby="supervisorTitle" hidden>
+          <div class="page-heading page-heading--dark">
+            <div>
+              <p class="kicker kicker--light">Vista de gestión</p>
+              <h1 id="supervisorTitle">Panel de supervisor</h1>
+              <p>Resultados y actividad del equipo en un solo lugar.</p>
+            </div>
+            <button class="button button--glass" id="refreshSupervisor" type="button">
+              <span data-icon="refresh" aria-hidden="true"></span>Actualizar
+            </button>
+          </div>
+
+          <div class="supervisor-toolbar"><p id="supervisorDate"></p></div>
+
+          <div class="kpi-grid">
+            <article class="kpi-card"><span data-icon="users" aria-hidden="true"></span><div><small>Participantes</small><strong id="kpiParticipants">0</strong></div></article>
+            <article class="kpi-card"><span data-icon="practice" aria-hidden="true"></span><div><small>Intentos</small><strong id="kpiAttempts">0</strong></div></article>
+            <article class="kpi-card"><span data-icon="target" aria-hidden="true"></span><div><small>Promedio</small><strong><span id="kpiAverage">0</span><small>/100</small></strong></div></article>
+            <article class="kpi-card"><span data-icon="trend" aria-hidden="true"></span><div><small>Meta diaria</small><strong>75<small>/100</small></strong></div></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel-card">
+              <div class="panel-card__heading"><div><h2>Top del día</h2><p>Mejores evaluaciones</p></div></div>
+              <div id="supervisorRanking"></div>
+            </article>
+            <article class="panel-card">
+              <div class="panel-card__heading"><div><h2>Por comportamiento</h2><p>Promedio de cada habilidad</p></div></div>
+              <div id="behaviorPerformance"></div>
+            </article>
+          </div>
+
+          <article class="panel-card table-card">
+            <div class="panel-card__heading"><div><h2>Actividad reciente</h2><p>Últimos intentos registrados</p></div></div>
+            <div class="data-table" id="recentAttempts"></div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="qa-lab-config.js?v=20261009-1"></script>
+  <script src="qa-lab-app.js" defer></script>
+</body>
+</html>
