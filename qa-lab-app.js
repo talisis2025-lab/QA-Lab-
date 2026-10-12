@@ -22,7 +22,7 @@ const topics = [
     description: "Retoma lo importante y demuestra comprensión.",
     intro: "Escuchar es usar lo que la persona dijo para construir la siguiente respuesta.",
     formula: ["Identifica la idea", "Reconoce", "Conecta"],
-    effective: { title: "Respuesta conectada", text: "Retoma un dato relevante antes de continuar.", call: ["Trabajo de lunes a sábado.", "Con ese horario, revisemos modalidades que no te obliguen a asistir diario."], chat: ["Ya tengo experiencia laboral.", "Esa experiencia puede ayudarte a aprovechar mejor la carrera."] },
+    effective: { title: "Respuesta conectada", text: "Retoma un dato relevante antes de continuar.", call: ["Trabajo de lunes a sábado.", "Ese horario es importante. ¿En qué momentos sí podrías estudiar? Luego verificamos opciones disponibles."], chat: ["Ya tengo experiencia laboral.", "Esa experiencia es útil para orientar la búsqueda. ¿En qué área quieres crecer?"] },
     exceeds: { title: "Comprensión precisa", text: "Reconoce emoción, contexto y objetivo sin asumir.", call: ["Llevo años haciendo lo mismo.", "Suena a que buscas un cambio real, no solo un título. ¿Qué puesto te interesa?"], chat: ["Mi familia me anima, pero tengo dudas.", "Tienes apoyo y también inquietudes. ¿Cuál pesa más hoy?"] }
   },
   {
@@ -30,7 +30,7 @@ const topics = [
     description: "Comunica con claridad y enfoque en soluciones.",
     intro: "Usa lenguaje simple, positivo y específico. Explica posibilidades sin prometer de más.",
     formula: ["Simplifica", "Enfoca en opciones", "Sé preciso"],
-    effective: { title: "Mensaje fácil de entender", text: "Evita tecnicismos y responde de forma concreta.", call: ["¿Puedo pagar después?", "Podemos revisar las fechas y opciones de pago disponibles."], chat: ["No puedo ir entre semana.", "Tenemos alternativas con mayor flexibilidad. Te explico cómo funcionan."] },
+    effective: { title: "Mensaje fácil de entender", text: "Evita tecnicismos y responde de forma concreta.", call: ["¿Puedo pagar después?", "Revisemos las fechas y opciones de pago vigentes para tu programa."], chat: ["No puedo ir entre semana.", "Entiendo. ¿Qué horario te funciona? Confirmo qué opciones existen para ese programa."] },
     exceeds: { title: "Claridad que tranquiliza", text: "Reformula la preocupación y ofrece un camino verificable.", call: ["No sé si sea el momento.", "Podemos revisar tiempo y presupuesto para que decidas con información clara."], chat: ["Me preocupa no continuar.", "Revisemos la carga y el acompañamiento antes de que tomes una decisión."] }
   },
   {
@@ -38,23 +38,23 @@ const topics = [
     description: "Resuelve la duda y orienta el siguiente paso.",
     intro: "Una buena respuesta cierra la duda actual y deja claro qué puede hacer la persona después.",
     formula: ["Responde", "Verifica", "Orienta"],
-    effective: { title: "Solución completa", text: "Responde de manera directa y propone una acción.", call: ["¿Cuánto dura la carrera?", "Te confirmo la duración del plan y después revisamos tu fecha de inicio."], chat: ["¿Qué necesito para iniciar?", "Necesitas estos documentos. Si quieres, revisamos ahora cuáles ya tienes."] },
-    exceeds: { title: "Solución anticipada", text: "Además de resolver, previene la siguiente duda relevante.", call: ["Trabajo tiempo completo.", "Sí puedes estudiar. Revisemos modalidad, carga sugerida y horarios de apoyo."], chat: ["¿Tienen modalidad en línea?", "Sí. Te explico cómo se cursa y qué acompañamiento recibes."] }
+    effective: { title: "Solución completa", text: "Responde de manera directa y propone una acción.", call: ["¿Cuánto dura la carrera?", "Depende del plan vigente; lo confirmo para la carrera que te interesa y revisamos tu fecha de inicio."], chat: ["¿Qué necesito para iniciar?", "Confirmaré los requisitos de este programa y revisamos cuáles ya tienes."] },
+    exceeds: { title: "Solución anticipada", text: "Además de resolver, previene la siguiente duda relevante.", call: ["Trabajo tiempo completo.", "Revisemos la modalidad y carga disponibles para ver si son compatibles con tu horario."], chat: ["¿Tienen modalidad en línea?", "Lo confirmo para el programa que buscas; después te explico cómo se cursa y qué apoyo incluye."] }
   },
   {
     id: "embajador", title: "Embajador Talisis", icon: "spark", tag: "conversion",
     description: "Convierte atributos en beneficios relevantes.",
     intro: "Habla de la institución desde la necesidad expresada, no desde una lista de características.",
     formula: ["Escucha la meta", "Elige un atributo", "Traduce el beneficio"],
-    effective: { title: "Beneficio relevante", text: "Relaciona una característica con el contexto del prospecto.", call: ["Quiero seguir trabajando.", "La flexibilidad te permite avanzar sin pausar tu experiencia laboral."], chat: ["Busco crecer en mi empleo.", "El enfoque práctico te ayuda a aplicar lo aprendido desde ahora."] },
-    exceeds: { title: "Valor personalizado", text: "Conecta varios beneficios sin convertir la respuesta en un discurso.", call: ["No tengo mucho tiempo.", "Podemos combinar flexibilidad y acompañamiento para que organices un ritmo sostenible."], chat: ["¿Por qué elegirlos?", "Por lo que buscas, destacan la modalidad flexible y la orientación durante tu avance."] }
+    effective: { title: "Beneficio relevante", text: "Relaciona una característica con el contexto del prospecto.", call: ["Quiero seguir trabajando.", "Tu horario será clave; confirmemos qué modalidades tiene el programa y cómo te ayudarían a continuar trabajando."], chat: ["Busco crecer en mi empleo.", "Revisemos el plan de estudios y qué contenidos podrían servirte para la meta que mencionas."] },
+    exceeds: { title: "Valor personalizado", text: "Conecta beneficios sin convertir la respuesta en un discurso.", call: ["No tengo mucho tiempo.", "Comparemos los horarios vigentes con tu semana y el apoyo disponible antes de elegir un ritmo."], chat: ["¿Por qué elegirlos?", "Depende de lo que buscas. Dime qué valoras más y te mostraré atributos confirmados que respondan a eso."] }
   },
   {
     id: "oferta", title: "Oferta efectiva", icon: "offer", tag: "conversion",
     description: "Presenta la opción correcta y facilita el avance.",
     intro: "Resume lo entendido, recomienda una alternativa y propone un siguiente paso concreto.",
     formula: ["Resume", "Recomienda", "Avanza"],
-    effective: { title: "Recomendación con sentido", text: "La oferta responde a una necesidad que ya fue confirmada.", call: ["No quiero dejar mi negocio.", "Por tu situación, la modalidad flexible es la mejor opción. Revisemos horarios."], chat: ["Me interesa Administración.", "Por tu meta laboral, esta carrera encaja. ¿Quieres revisar el plan o el proceso de ingreso?"] },
+    effective: { title: "Recomendación con sentido", text: "La oferta responde a una necesidad que ya fue confirmada.", call: ["No quiero dejar mi negocio.", "Para mantener tu negocio, primero confirmemos qué modalidades y horarios tiene este programa."], chat: ["Me interesa Administración.", "¿Qué meta laboral buscas? Con eso revisamos si el plan encaja y el siguiente paso."] },
     exceeds: { title: "Oferta fácil de decidir", text: "Compara opciones relevantes y reduce fricción para avanzar.", call: ["Necesito pensarlo.", "Claro. Para ayudarte, resumamos costo, tiempo y modalidad antes de cerrar."], chat: ["Estoy comparando opciones.", "Te comparto los tres puntos que responden a lo que buscas y agendamos seguimiento."] }
   },
   {
@@ -70,22 +70,10 @@ const topics = [
     description: "Cierra con acuerdos, tiempos y canales claros.",
     intro: "Antes de terminar, confirma qué ocurrirá, quién hará cada acción y cuándo habrá seguimiento.",
     formula: ["Resume acuerdos", "Define responsable", "Confirma tiempo"],
-    effective: { title: "Cierre sin dudas", text: "Indica el siguiente paso y el canal de contacto.", call: ["¿Qué sigue?", "Hoy te envío la información y mañana te contacto para resolver dudas."], chat: ["¿Dónde recibiré los datos?", "Te llegarán a este correo en unos minutos. Confírmame cuando los veas."] },
-    exceeds: { title: "Seguimiento prevenido", text: "Confirma acuerdos y explica qué hacer si algo cambia.", call: ["¿Y si no puedo asistir?", "Puedes cambiar el horario desde este enlace o avisarme y lo ajustamos."], chat: ["¿Qué llevo a la cita?", "Necesitas estos documentos. Te enviaré la lista y un recordatorio antes de la cita."] }
+    effective: { title: "Cierre sin dudas", text: "Indica el siguiente paso y el canal de contacto.", call: ["¿Qué sigue?", "Hoy te envío la información al correo que confirmemos y mañana te contacto para resolver dudas. ¿Te funciona?"], chat: ["¿Dónde recibiré los datos?", "Los enviaré al correo que confirmemos hoy. Avísame por este chat si no llegan."] },
+    exceeds: { title: "Seguimiento prevenido", text: "Confirma acuerdos y explica qué hacer si algo cambia.", call: ["¿Y si no puedo asistir?", "Avísame por este canal antes de la cita y verifico cómo reprogramarla; te confirmo el nuevo horario."], chat: ["¿Qué llevo a la cita?", "Te enviaré la lista de requisitos confirmados por este medio. ¿Me confirmas cuando la recibas?"] }
   }
 ];
-
-const scenarioBank = {
-  amable: ["Me interesa estudiar, pero no sé por dónde empezar.", "Quiero estudiar Administración porque ya trabajo en una empresa.", "Hace tiempo quiero estudiar, pero siempre surge algo."],
-  descubre: ["Quiero estudiar, pero no sé si sea el momento.", "Me interesa Administración porque quiero mejorar mi negocio.", "Busco una opción que se adapte a mi vida actual."],
-  escucha: ["Quiero estudiar porque llevo cinco años haciendo lo mismo.", "Trabajo de lunes a sábado y no sé si pueda con el tiempo.", "Mi familia me motiva, pero tengo muchas responsabilidades."],
-  palabras: ["¿Y si no puedo pagar todo junto?", "No puedo asistir entre semana, ¿qué opciones tengo?", "Me preocupa comprometerme y después no continuar."],
-  resolucion: ["¿Cuánto tiempo tardaría en terminar la carrera?", "¿Puedo estudiar si trabajo de tiempo completo?", "¿Qué necesito para iniciar?"],
-  embajador: ["Trabajo todo el día, por eso no sé si pueda estudiar.", "Quiero seguir trabajando mientras estudio.", "¿Por qué debería estudiar con ustedes?"],
-  oferta: ["Quiero estudiar Administración, pero no quiero dejar mi negocio.", "La modalidad me interesa, pero necesito pensarlo.", "Quiero comparar opciones antes de decidir."],
-  negociacion: ["Me interesa, pero se me hace muy caro.", "Necesito consultarlo con mi familia.", "No estoy seguro de que esta modalidad sea para mí."],
-  expectativas: ["¿Qué sigue después de esta llamada?", "¿Por dónde me enviarán la información?", "Si no puedo asistir, ¿cómo cambio el horario?"]
-};
 
 const iconPaths = {
   home: '<path d="M3 10.7 12 3l9 7.7"/><path d="M5.5 9.4V21h13V9.4M9 21v-7h6v7"/>',
@@ -234,11 +222,14 @@ class AppsScriptBridge {
 }
 
 const clientConfig = window.QA_LAB_CONFIG || {};
-const bridge = new AppsScriptBridge(clientConfig.appsScriptUrl, Number(clientConfig.requestTimeoutMs) || 20000);
+const bridge = new AppsScriptBridge(clientConfig.appsScriptUrl, Math.max(Number(clientConfig.requestTimeoutMs) || 20000, 90000));
 const state = {
   currentUser: null,
   currentTopic: null,
-  currentScenario: null,
+  practiceCase: null,
+  practiceExpired: false,
+  practiceTimer: 0,
+  practiceGeneration: 0,
   recognition: null,
   toastTimer: null,
   token: "",
@@ -246,7 +237,6 @@ const state = {
   loginEmail: "",
   authStep: "email",
   dailyRanking: [],
-  scenarioSeen: new Map(),
   supervisorRequest: 0,
   sessionEpoch: 0
 };
@@ -504,6 +494,10 @@ async function showSupervisor() {
 function handleRoute() {
   if (!state.currentUser) return;
   stopRecognition();
+  clearPracticeTimer();
+  state.practiceCase = null;
+  state.practiceExpired = false;
+  state.practiceGeneration += 1;
   closeDrawer();
   let hash = "#inicio";
   try { hash = decodeURIComponent(location.hash || "#inicio"); }
@@ -568,7 +562,7 @@ async function loadHomeData() {
 }
 
 function conversationTemplate(title, channel, lines) {
-  return `<article class="conversation"><div class="conversation__heading"><span>${title}</span><span>${channel}</span></div>${lines.map((line, index) => `<div class="message"><strong>${index % 2 === 0 ? "Prospecto" : "Asesor"}</strong>${escapeHtml(line)}</div>`).join("")}</article>`;
+  return `<article class="conversation" data-protected-example><div class="conversation__heading"><span>${title}</span><span>${channel}</span></div>${lines.map((line, index) => `<div class="message"><strong>${index % 2 === 0 ? "Prospecto" : "Asesor"}</strong>${escapeHtml(line)}</div>`).join("")}</article>`;
 }
 
 function levelTemplate(level, exceeds = false) {
@@ -581,19 +575,23 @@ function metricTemplate(id, label) {
 
 function practiceTemplate() {
   return `<div class="practice-grid">
-    <article class="scenario-card"><p class="kicker kicker--light">Reto de aplicación</p><h2>Responde como asesor</h2><p>Tu respuesta se evalúa con cuatro criterios.</p><div class="scenario-question" id="scenarioQuestion"></div><div class="scenario-meta"><span id="attemptCount">Sin intentos en este tema</span><span>Práctica ilimitada</span></div>
+    <article class="scenario-card"><p class="kicker kicker--light">Reto de aplicación</p><h2>Responde como asesor</h2><p>Dispones de 60 segundos. Evaluación estricta según el marco QA.</p><div class="scenario-question" id="scenarioQuestion">Abre la práctica para recibir un caso.</div><div class="scenario-meta"><span id="attemptCount">Sin intentos en este tema</span><strong id="practiceClock" aria-live="off">01:00</strong></div>
       <div class="mode-switch" aria-label="Modo de respuesta"><button class="mode-button" type="button" data-mode="text" aria-pressed="true">${iconSvg("edit")}Texto</button><button class="mode-button" type="button" data-mode="voice" aria-pressed="false">${iconSvg("mic")}Voz</button></div>
       <div class="voice-control" id="voiceControl" hidden><span class="voice-dot" aria-hidden="true"></span><span id="voiceStatus">Dicta tu respuesta y revisa la transcripción.</span><button class="button button--light" id="recordButton" type="button">Iniciar dictado</button></div>
       <label class="answer-label" for="answerInput"><span id="answerLabel">Tu respuesta</span><textarea class="answer-area" id="answerInput" maxlength="3000" placeholder="Escribe cómo responderías al prospecto"></textarea></label>
-      <div class="practice-actions"><button class="button button--primary" id="evaluateButton" type="button">Evaluar respuesta</button><button class="button button--secondary" id="nextScenarioButton" type="button">Otro caso</button></div><p class="practice-feedback" id="practiceFeedback" role="status" hidden></p>
+      <div class="practice-actions"><button class="button button--primary" id="evaluateButton" type="button" disabled>Evaluar respuesta</button><button class="button button--secondary" id="nextScenarioButton" type="button">Otro caso</button></div><p class="practice-feedback" id="practiceFeedback" role="status" hidden></p>
     </article>
-    <div class="score-stack"><article class="score-card"><h2>Tu evaluación</h2><div class="score-summary"><div class="score-ring" id="scoreRing"><strong id="scoreValue">—</strong></div><div class="score-summary__copy"><strong id="scoreTitle">Aún no evaluada</strong><span id="scoreText">Responde el caso para ver tu resultado.</span></div></div>${metricTemplate("clarity", "Claridad")}${metricTemplate("empathy", "Empatía")}${metricTemplate("personal", "Personalización")}${metricTemplate("advance", "Avance")}</article><div class="leaderboard" id="topicRanking"></div></div>
+    <div class="score-stack"><article class="score-card"><h2>Tu evaluación</h2><p>Calificación automática sujeta a revisión de QA.</p><div class="score-summary"><div class="score-ring" id="scoreRing"><strong id="scoreValue">—</strong></div><div class="score-summary__copy"><strong id="scoreTitle">Aún no evaluada</strong><span id="scoreText">Responde el caso para ver tu resultado.</span></div></div>${metricTemplate("clarity", "Criterio QA")}${metricTemplate("empathy", "Contexto")}${metricTemplate("personal", "Precisión")}${metricTemplate("advance", "Siguiente paso")}</article><div class="leaderboard" id="topicRanking"></div></div>
+    <div class="practice-expired" id="practiceExpired" hidden><div class="practice-expired__dialog" role="alertdialog" aria-modal="true" aria-labelledby="practiceExpiredTitle"><h2 id="practiceExpiredTitle">Se terminó el tiempo</h2><p>Tu respuesta se borró. Inicia un caso nuevo para volver a intentar.</p><button class="button button--primary" id="retryPracticeButton" type="button">Reintentar</button></div></div>
   </div>`;
 }
 
 function openTopic(id) {
   const topic = topicById(id);
   if (!topic) { location.hash = "#inicio"; return; }
+  clearPracticeTimer();
+  state.practiceCase = null;
+  state.practiceGeneration += 1;
   state.currentTopic = topic;
   revealView(dom.detailView);
   dom.crumb.textContent = topic.title;
@@ -620,6 +618,7 @@ function activateTab(tab) {
     panel.hidden = !selected;
     panel.classList.toggle("is-active", selected);
   });
+  if (tab.id === "tab-practice" && !state.practiceCase && !state.practiceExpired) startPractice(state.currentTopic);
 }
 
 function setupTabs() {
@@ -640,20 +639,7 @@ function setupTabs() {
   });
 }
 
-function nextScenario(topic) {
-  const bank = scenarioBank[topic.id] || scenarioBank.amable;
-  const seen = state.scenarioSeen.get(topic.id) || [];
-  let available = bank.map((text, index) => ({ text, index })).filter((item) => !seen.includes(item.index));
-  if (!available.length) { seen.length = 0; available = bank.map((text, index) => ({ text, index })); }
-  const picked = available[Math.floor(Math.random() * available.length)];
-  seen.push(picked.index);
-  state.scenarioSeen.set(topic.id, seen);
-  state.currentScenario = picked.index;
-  $("#scenarioQuestion").textContent = `“${picked.text}”`;
-}
-
 function setupPractice(topic) {
-  nextScenario(topic);
   const count = Number(state.topicAttempts?.[topic.id]) || 0;
   $("#attemptCount").textContent = count ? `${count} intento${count === 1 ? "" : "s"} hoy` : "Sin intentos en este tema";
   $("#topicRanking").innerHTML = rankRows();
@@ -667,6 +653,7 @@ function setupPractice(topic) {
   $("#recordButton").addEventListener("click", toggleVoiceRecognition);
   $("#nextScenarioButton").addEventListener("click", () => resetPractice(topic));
   $("#evaluateButton").addEventListener("click", () => evaluatePractice(topic));
+  $("#retryPracticeButton").addEventListener("click", () => resetPractice(topic));
 }
 
 function toggleVoiceRecognition() {
@@ -708,9 +695,76 @@ function toggleVoiceRecognition() {
   status.textContent = "Escuchando…";
 }
 
+function clearPracticeTimer() {
+  window.clearInterval(state.practiceTimer);
+  state.practiceTimer = 0;
+}
+
+function expirePractice() {
+  clearPracticeTimer();
+  stopRecognition();
+  state.practiceCase = null;
+  state.practiceExpired = true;
+  $("#answerInput").value = "";
+  $("#answerInput").disabled = true;
+  $("#evaluateButton").disabled = true;
+  $("#practiceClock").textContent = "00:00";
+  $("#practiceExpired").hidden = false;
+  $(".practice-grid", dom.detailView).classList.add("is-expired");
+  dom.detailView.classList.add("is-practice-expired");
+  $("#retryPracticeButton").focus();
+}
+
+function tickPractice() {
+  if (!state.practiceCase) return;
+  const left = Math.max(0, Math.ceil((state.practiceCase.deadline - performance.now()) / 1000));
+  $("#practiceClock").textContent = `00:${String(left).padStart(2, "0")}`;
+  if (left <= 0) expirePractice();
+}
+
+async function startPractice(topic) {
+  if (!topic || !state.currentUser) return;
+  const generation = ++state.practiceGeneration;
+  clearPracticeTimer();
+  state.practiceCase = null;
+  state.practiceExpired = false;
+  $("#practiceExpired").hidden = true;
+  $(".practice-grid", dom.detailView).classList.remove("is-expired");
+  dom.detailView.classList.remove("is-practice-expired");
+  $("#scenarioQuestion").textContent = "Preparando un caso nuevo…";
+  $("#practiceClock").textContent = "01:00";
+  $("#answerInput").disabled = true;
+  $("#evaluateButton").disabled = true;
+  $("#nextScenarioButton").disabled = true;
+  try {
+    const result = await callServer("startPractice", { topicId: topic.id });
+    if (generation !== state.practiceGeneration || state.currentTopic?.id !== topic.id || !state.currentUser) return;
+    if (!result?.ok || !result.caseId || !result.scenario) throw new Error("PRACTICE_FAILED");
+    const remaining = Date.parse(result.expiresAt) - Date.parse(result.serverNow);
+    if (!Number.isFinite(remaining) || remaining <= 0) throw new Error("PRACTICE_FAILED");
+    state.practiceCase = { id: result.caseId, deadline: performance.now() + remaining - 500 };
+    $("#scenarioQuestion").textContent = result.scenario;
+    $("#answerInput").disabled = false;
+    $("#evaluateButton").disabled = false;
+    tickPractice();
+    state.practiceTimer = window.setInterval(tickPractice, 250);
+    $("#answerInput").focus();
+  } catch (error) {
+    if (generation !== state.practiceGeneration) return;
+    $("#scenarioQuestion").textContent = error.code === "AI_NOT_CONFIGURED" ?
+      "Falta configurar Gemini en Apps Script." : error.code === "PRACTICE_RATE_LIMIT" ?
+      "Espera un minuto antes de generar más casos." : "No se pudo preparar el caso. Pulsa Otro caso para reintentar.";
+    showToast("No se pudo preparar la práctica.");
+  } finally {
+    if (generation === state.practiceGeneration) $("#nextScenarioButton").disabled = false;
+  }
+}
+
 function resetPractice(topic) {
   stopRecognition();
-  nextScenario(topic);
+  clearPracticeTimer();
+  state.practiceCase = null;
+  state.practiceExpired = false;
   $("#answerInput").value = "";
   $("#practiceFeedback").hidden = true;
   $("#scoreValue").textContent = "—";
@@ -721,10 +775,12 @@ function resetPractice(topic) {
     $(`#metric-${metric}`).style.width = "0";
     $(`#metric-${metric}-value`).textContent = "0";
   });
-  $("#answerInput").focus();
+  startPractice(topic);
 }
 
 async function evaluatePractice(topic) {
+  if (!state.practiceCase) { showToast("Inicia un caso nuevo."); return; }
+  if (performance.now() >= state.practiceCase.deadline) { expirePractice(); return; }
   const answer = $("#answerInput").value.trim();
   if (!answer) { showToast("Escribe o dicta una respuesta antes de evaluar."); $("#answerInput").focus(); return; }
   const button = $("#evaluateButton");
@@ -733,8 +789,10 @@ async function evaluatePractice(topic) {
   const original = "Evaluar respuesta";
   button.textContent = "Evaluando…";
   const epoch = state.sessionEpoch;
+  const caseId = state.practiceCase.id;
+  clearPracticeTimer();
   try {
-    const result = await callServer("saveEvaluation", { topicId: topic.id, scenarioIndex: state.currentScenario, answer });
+    const result = await callServer("saveEvaluation", { caseId, answer });
     if (epoch !== state.sessionEpoch || !state.currentUser) return;
     if (!result?.ok) throw new Error("EVALUATION_FAILED");
     const { score, metrics, title, message } = result;
@@ -761,9 +819,15 @@ async function evaluatePractice(topic) {
     renderDailyBoard();
     showToast(`Evaluación guardada: ${score} puntos.`);
   } catch (error) {
-    if (error.message !== "SESSION_REQUIRED") showToast("No se pudo guardar la evaluación. Intenta nuevamente.");
+    if (error.code === "PRACTICE_EXPIRED") expirePractice();
+    else if (error.message !== "SESSION_REQUIRED") {
+      state.practiceCase = null;
+      $("#answerInput").disabled = true;
+      $("#scenarioQuestion").textContent = "No se pudo calificar el caso. Pulsa Otro caso para reintentar.";
+      showToast("No se pudo guardar la evaluación. Inicia otro caso.");
+    }
   } finally {
-    button.disabled = false;
+    button.disabled = true;
     button.classList.remove("is-loading");
     button.textContent = original;
   }
@@ -814,9 +878,9 @@ function logIn(profile) {
   $("#currentRole").textContent = profile.role;
   $("#userAvatar").textContent = getInitials(profile.name);
   $("#supervisorNav").hidden = !profile.canSupervisor;
-  $("#adminNav").hidden = !profile.canAdmin;
-  $("#staffNavigation").hidden = !profile.canSupervisor && !profile.canAdmin;
-  if (profile.canAdmin && bridge.isConfigured()) {
+  $("#adminNav").hidden = !profile.canCreateAccess;
+  $("#staffNavigation").hidden = !profile.canSupervisor && !profile.canCreateAccess;
+  if (profile.canCreateAccess && bridge.isConfigured()) {
     const adminUrl = new URL(clientConfig.appsScriptUrl);
     adminUrl.searchParams.set("page", "admin");
     $("#adminNav").href = adminUrl.toString();
@@ -828,6 +892,9 @@ function logIn(profile) {
 
 function localLogout(message = "") {
   stopRecognition();
+  clearPracticeTimer();
+  state.practiceCase = null;
+  state.practiceGeneration += 1;
   state.sessionEpoch += 1;
   state.supervisorRequest += 1;
   state.currentUser = null;
@@ -850,6 +917,17 @@ async function logOut() {
 }
 
 function bindEvents() {
+  ["copy", "cut", "contextmenu", "dragstart"].forEach((type) => {
+    dom.detailView.addEventListener(type, (event) => {
+      if (event.target.closest("[data-protected-example], .scenario-question")) event.preventDefault();
+    });
+  });
+  dom.detailView.addEventListener("paste", (event) => {
+    if (event.target.id === "answerInput") {
+      event.preventDefault();
+      showToast("Escribe o dicta tu respuesta para esta práctica.");
+    }
+  });
   dom.loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
     if (state.authStep === "email") requestCode();
